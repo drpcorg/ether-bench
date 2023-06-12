@@ -1,0 +1,914 @@
+[
+    {
+        "name": "eth_call",
+        "profile": {
+            "eth_call": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getTransactionReceipt",
+        "profile": {
+            "eth_getTransactionReceipt": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getBalance",
+        "profile": {
+            "eth_getBalance": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getBlockByNumber",
+        "profile": {
+            "eth_getBlockByNumber": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getBlockByNumber#full",
+        "profile": {
+            "eth_getBlockByNumber#full": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getTransactionCount",
+        "profile": {
+            "eth_getTransactionCount": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_blockNumber",
+        "profile": {
+            "eth_blockNumber": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getTransactionByHash",
+        "profile": {
+            "eth_getTransactionByHash": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getLogs",
+        "profile": {
+            "eth_getLogs": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getCode",
+        "profile": {
+            "eth_getCode": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_estimateGas",
+        "profile": {
+            "eth_estimateGas": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getBlockByHash",
+        "profile": {
+            "eth_getBlockByHash": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getBlockByHash#full",
+        "profile": {
+            "eth_getBlockByHash#full": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getTransactionByBlockNumberAndIndex",
+        "profile": {
+            "eth_getTransactionByBlockNumberAndIndex": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "net_version",
+        "profile": {
+            "net_version": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_gasPrice",
+        "profile": {
+            "eth_gasPrice": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "net_listening",
+        "profile": {
+            "net_listening": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "net_peerCount",
+        "profile": {
+            "net_peerCount": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_syncing",
+        "profile": {
+            "eth_syncing": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getStorageAt",
+        "profile": {
+            "eth_getStorageAt": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_accounts",
+        "profile": {
+            "eth_accounts": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_chainId",
+        "profile": {
+            "eth_chainId": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_protocolVersion",
+        "profile": {
+            "eth_protocolVersion": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_feeHistory",
+        "profile": {
+            "eth_feeHistory": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_maxPriorityFeePerGas",
+        "profile": {
+            "eth_maxPriorityFeePerGas": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getTransactionByBlockHashAndIndex",
+        "profile": {
+            "eth_getTransactionByBlockHashAndIndex": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getBlockTransactionCountByHash",
+        "profile": {
+            "eth_getBlockTransactionCountByHash": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getBlockTransactionCountByNumber",
+        "profile": {
+            "eth_getBlockTransactionCountByNumber": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getBlockReceipts",
+        "profile": {
+            "eth_getBlockReceipts": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "trace_block",
+        "profile": {
+            "trace_block": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "trace_transaction",
+        "profile": {
+            "trace_transaction": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "trace_replayTransaction",
+        "profile": {
+            "trace_replayTransaction": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "trace_ReplayBlockTransactions",
+        "profile": {
+            "trace_ReplayBlockTransactions": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "debug_TraceTransaction",
+        "profile": {
+            "debug_TraceTransaction": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "debug_TraceBlockByNumber",
+        "profile": {
+            "debug_TraceBlockByNumber": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "debug_TraceBlockByHash",
+        "profile": {
+            "debug_TraceBlockByHash": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_createAccessList",
+        "profile": {
+            "eth_createAccessList": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    },
+    {
+        "name": "eth_getProof",
+        "profile": {
+            "eth_getProof": 1
+        },
+        "steps": [
+            {
+                "duration": 30,
+                "rate": 10
+            },
+            {
+                "duration": 30,
+                "rate": 100
+            },
+            {
+                "duration": 30,
+                "rate": 1000
+            },
+            {
+                "duration": 30,
+                "rate": 10000
+            }
+        ]
+    }
+]
