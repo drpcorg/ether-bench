@@ -32,13 +32,13 @@ func main() {
 
 	jsonString, err := os.ReadFile(options.Scenario)
 	if err != nil {
-		fmt.Println(err)
+		exit(1, "stages reading error: %v", err)
 	}
 
 	var stages []Stage
 	err = json.Unmarshal(jsonString, &stages)
 	if err != nil {
-		fmt.Println(err)
+		exit(1, "stages parsing error: %v", err)
 	}
 
 	stagesResults := make([]StageResult, 0)
