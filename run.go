@@ -56,10 +56,10 @@ func main() {
 			rate := vegeta.Rate{Freq: step.Rate, Per: time.Second}
 			duration := time.Duration(step.Duration) * time.Second
 			ctx, cancel := context.WithCancel(context.Background())
-			targeter := NewEthSpamTargeter(target,
+			targeter := NewEthSpamTargeter(ctx,
+				target,
 				stage.Profile,
-				options.SourceHost,
-				ctx)
+				options.SourceHost,)
 			attacker := vegeta.NewAttacker()
 
 			var metrics vegeta.Metrics
@@ -92,7 +92,7 @@ func main() {
 	os.WriteFile(options.Result, res, 0644)
 }
 
-func NewEthSpamTargeter(host string, queryParams map[string]int64, parentHost string, ctx context.Context) vegeta.Targeter {
+func NewEthSpamTargeter(ctx context.Context, host string, queryParams map[string]int64, parentHost string) vegeta.Targeter {
 	if host == "" {
 		exit(1, "host is required")
 	}
@@ -115,12 +115,13 @@ func NewEthSpamTargeter(host string, queryParams map[string]int64, parentHost st
 
 	stateChannel := make(chan ethspam.State, 1)
 
-	randSrc := rand.NewSource(time.Now().UnixNano())
 	go func() {
+		randSrc := rand.NewSource(time.Now().UnixNano())
 		state := ethspam.LiveState{
 			IdGen:   &ethspam.IdGenerator{},
 			RandSrc: randSrc,
 		}
+		defer close(stateChannel)
 		for {
 			newState, err := mkState.Refresh(&state)
 			if err != nil {
@@ -148,6 +149,7 @@ func NewEthSpamTargeter(host string, queryParams map[string]int64, parentHost st
 			select {
 			case <-time.After(15 * time.Second):
 			case <-ctx.Done():
+				return
 			}
 		}
 	}()
@@ -157,6 +159,7 @@ func NewEthSpamTargeter(host string, queryParams map[string]int64, parentHost st
 	queries := make(chan string)
 
 	go func() {
+		defer close(queries)
 		for {
 			// Update state when a new one is emitted
 			select {
@@ -170,7 +173,12 @@ func NewEthSpamTargeter(host string, queryParams map[string]int64, parentHost st
 			} else if err != nil {
 				exit(2, "failed to write generated query: %s", err)
 			} else {
-				queries <- q.GetBody()
+				select {
+				case queries <- q.GetBody():
+				case <-ctx.Done():
+					return
+				}
+				
 			}
 		}
 	}()
