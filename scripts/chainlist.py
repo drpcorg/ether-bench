@@ -31,12 +31,12 @@ hosts = [
 ]
 
 profiles = [
-    {"name": "getBalance", "profile": {"eth_getBalance": 1}},
+    
     {"name": "getBlockByNumber", "profile": {"eth_getBlockByNumber": 1}},
 ]
 
 steps = []
-for i in [10,100]:
+for i in [10]:
     steps.append({
         "duration": 30,
         "rate": i,
