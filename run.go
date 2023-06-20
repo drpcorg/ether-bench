@@ -4,15 +4,17 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/INFURA/go-ethlibs/node"
-	ethspam "github.com/p2p-org/ethspam/lib"
-	"github.com/jessevdk/go-flags"
-	vegeta "github.com/tsenart/vegeta/v12/lib"
 	"io"
 	"math/rand"
 	"net/http"
 	"os"
+	"strings"
 	"time"
+
+	"github.com/INFURA/go-ethlibs/node"
+	"github.com/jessevdk/go-flags"
+	ethspam "github.com/p2p-org/ethspam/lib"
+	vegeta "github.com/tsenart/vegeta/v12/lib"
 )
 
 type Options struct {
@@ -63,7 +65,8 @@ func main() {
 			attacker := vegeta.NewAttacker()
 
 			var metrics vegeta.Metrics
-			for res := range attacker.Attack(targeter, rate, duration, "Big Bang!") {
+			for res := range attacker.Attack(targeter, rate, duration, stage.Name) {
+				processEthErrors(res)
 				metrics.Add(res)
 				stageMetrics.Add(res)
 			}
@@ -90,6 +93,30 @@ func main() {
 
 	res, _ := json.Marshal(stagesResults)
 	os.WriteFile(options.Result, res, 0644)
+}
+
+func processEthErrors(data *vegeta.Result) {
+	if data.Code != 200 {
+		return
+	}
+	var result RpcResponse
+	err := json.Unmarshal(data.Body, &result)
+	if err != nil {
+		fmt.Printf("Error unmarshalling response JSON: %v\n", err)
+		data.Code = 500
+		data.Error = err.Error()
+		return
+	}
+
+	if result.Error != nil {
+		if strings.Contains(result.Error.Message, "reverted") || strings.Contains(result.Error.Data, "Reverted") {
+			// not an error
+			return
+		}
+
+		data.Code = 500
+		data.Error = result.Error.Message
+	}
 }
 
 func NewEthSpamTargeter(ctx context.Context, host string, queryParams map[string]int64, parentHost string) vegeta.Targeter {

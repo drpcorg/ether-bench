@@ -1,6 +1,9 @@
 package main
 
-import vegeta "github.com/tsenart/vegeta/v12/lib"
+import (
+	vegeta "github.com/tsenart/vegeta/v12/lib"
+	"encoding/json"
+)
 
 type Stage struct {
 	Name    string           `json:"name"`
@@ -22,4 +25,17 @@ type StageResult struct {
 
 type StepResult struct {
 	StepSummary vegeta.Metrics `json:"step_summary"`
+}
+
+type RpcError struct {
+	Message string `json:"message"`
+	Code    int    `json:"code"`
+	Data    string `json:"data,omitempty"`
+}
+
+type RpcResponse struct {
+	Id      json.RawMessage     `json:"id"`
+	Jsonrpc string              `json:"jsonrpc"`
+	Result  json.RawMessage     `json:"result,omitempty"`
+	Error   *RpcError           `json:"error,omitempty"`
 }
