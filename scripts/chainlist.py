@@ -31,7 +31,6 @@ hosts = [
 ]
 
 profiles = [
-    
     {"name": "getBlockByNumber", "profile": {"eth_getBlockByNumber": 1}},
 ]
 
