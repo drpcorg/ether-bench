@@ -21,3 +21,7 @@
 go.work
 
 ether-bench
+
+stages.json
+result.json
+*.csv
