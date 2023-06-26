@@ -63,6 +63,9 @@ Script generates example stages file for ramping eth methods of node or rpc prov
 ### calculate_cu.py
 Process result json and apply simple model to estimate relative CU's of each method
 
+### chainlist.py
+Script generates example stages file for testing public rpc endpoints listed at chainlist for latency.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
