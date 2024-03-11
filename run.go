@@ -66,11 +66,13 @@ func main() {
 				vegeta.MaxWorkers(16 * 32),
 			)
 
+			slow := make([]string, 0)
+
 			var metrics vegeta.Metrics
 			for res := range attacker.Attack(targeter, rate, duration, stage.Name) {
 				processEthErrors(res)
 				if res.Latency > time.Duration(1 * time.Second) {
-					fmt.Printf("latency > 1s - %s - \n", res.Headers.Get("x-drpc-trace-id"))
+					slow = append(slow, res.Headers.Get("x-drpc-trace-id"))
 				}
 				metrics.Add(res)
 				stageMetrics.Add(res)
@@ -78,12 +80,12 @@ func main() {
 			attacker.Stop()
 			metrics.Close()
 			cancel()
-			stepResults = append(stepResults, StepResult{StepSummary: metrics})
+			stepResults = append(stepResults, StepResult{StepSummary: metrics, Slow: slow})
 			if metrics.Success < 0.85 {
 				break
 			}
 			fmt.Printf("Step %v - succ: %v - mean: %v - p90: %v \n", n+1, metrics.Success, metrics.Latencies.Mean, metrics.Latencies.P90)
-			<-time.After(10 * time.Second)
+			<-time.After(5 * time.Second)
 		}
 		stageMetrics.Close()
 		stageResult := StageResult{

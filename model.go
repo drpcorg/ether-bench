@@ -25,6 +25,7 @@ type StageResult struct {
 
 type StepResult struct {
 	StepSummary vegeta.Metrics `json:"step_summary"`
+	Slow []string `json:"slow_traces"`
 }
 
 type RpcError struct {
