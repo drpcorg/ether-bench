@@ -69,8 +69,8 @@ func main() {
 			var metrics vegeta.Metrics
 			for res := range attacker.Attack(targeter, rate, duration, stage.Name) {
 				processEthErrors(res)
-				if res.Latency > time.Duration(600 * time.Millisecond) {
-					fmt.Printf("latency > 600 - %s\n", res.Headers.Get("x-drpc-trace-id"))
+				if res.Latency > time.Duration(1 * time.Second) {
+					fmt.Printf("latency > 1s - %s - \n", res.Headers.Get("x-drpc-trace-id"))
 				}
 				metrics.Add(res)
 				stageMetrics.Add(res)
