@@ -62,11 +62,16 @@ func main() {
 				target,
 				stage.Profile,
 				options.SourceHost,)
-			attacker := vegeta.NewAttacker()
+			attacker := vegeta.NewAttacker(
+				vegeta.MaxWorkers(16 * 32),
+			)
 
 			var metrics vegeta.Metrics
 			for res := range attacker.Attack(targeter, rate, duration, stage.Name) {
 				processEthErrors(res)
+				if res.Latency > time.Duration(600 * time.Millisecond) {
+					fmt.Printf("latency > 600 - %s\n", res.Headers.Get("x-drpc-trace-id"))
+				}
 				metrics.Add(res)
 				stageMetrics.Add(res)
 			}
