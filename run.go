@@ -63,7 +63,7 @@ func main() {
 				stage.Profile,
 				options.SourceHost,)
 			attacker := vegeta.NewAttacker(
-				vegeta.MaxWorkers(16 * 32),
+				vegeta.MaxWorkers(16 * 126),
 			)
 
 			slow := make([]string, 0)
